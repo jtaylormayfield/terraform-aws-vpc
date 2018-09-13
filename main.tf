@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 locals {
-  tag_prefix_name = "${var.project_name}-vpc"
+  tag_prefix_name = "${var.project_name}"
   tag_prefix_env  = "${var.project_environment}"
 }
 
