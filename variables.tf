@@ -61,7 +61,7 @@ variable "public_inbound_acls" {
 }
 
 variable "public_outbound_acls" {
-  default     = ["http", "https", "icmp"]
+  default     = ["http", "https", "ssh", "icmp", "eph"]
   description = "Canned outbound ACLs for public subnets. If 'all' is a value in the list, all ports will be open. Other values include 'http', 'https', 'ssh', 'icmp', and 'eph'."
   type        = "list"
 }
