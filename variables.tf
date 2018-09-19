@@ -1,8 +1,3 @@
-variable "aws_region" {
-  default     = "us-east-2"
-  description = "AWS region to use for API interaction."
-}
-
 variable "cidr" {
   default     = "10.87.0.0/16"
   description = "VPC CIDR block."
