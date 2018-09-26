@@ -15,8 +15,8 @@ variable "internal_hostnames" {
 
 variable "peer_vpc_spec" {
   default = {
-    vpc_id         = ""
     route_table_id = ""
+    vpc_id         = ""
   }
 
   description = "Peer VPC spec. Ignored if empty. Both VPCs must be in the same AWS account and region."
