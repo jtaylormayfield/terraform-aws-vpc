@@ -1,4 +1,5 @@
 /**
+ * # terraform-aws-vpc
  * A Terraform module that provisions a generic AWS VPC.
  */
 
