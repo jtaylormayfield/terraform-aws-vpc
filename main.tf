@@ -14,7 +14,7 @@ module "vpc" {
   cidr               = "${var.cidr}"
   internal_dns       = "${var.internal_dns}"
   internal_hostnames = "${var.internal_hostnames}"
-  peer_vpc_id        = "${var.peer_vpc_id}"
+  peer_vpc           = "${var.peer_vpc_spec}"
   tag_env            = "${local.tag_prefix_env}"
   tag_name           = "${local.tag_prefix_name}"
 }

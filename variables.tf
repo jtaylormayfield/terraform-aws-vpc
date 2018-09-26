@@ -13,9 +13,14 @@ variable "internal_hostnames" {
   description = "Use AWS-provided hostnames within the VPC."
 }
 
-variable "peer_vpc_id" {
-  default     = ""
-  description = "Peer VPC ID. Ignored if empty. Both VPCs must be in the same AWS account and region."
+variable "peer_vpc_spec" {
+  default = {
+    vpc_id         = ""
+    route_table_id = ""
+  }
+
+  description = "Peer VPC spec. Ignored if empty. Both VPCs must be in the same AWS account and region."
+  type        = "map"
 }
 
 variable "private_cidr" {
