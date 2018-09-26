@@ -13,26 +13,31 @@ variable "internal_hostnames" {
   description = "Use AWS-provided hostnames within the VPC."
 }
 
+variable "peer_vpc_id" {
+  default     = ""
+  description = "Peer VPC ID. Ignored if empty. Both VPCs must be in the same AWS account and region."
+}
+
 variable "private_cidr" {
   default     = "10.87.0.0/24"
-  description = "CIDR block of private IPs in the 'cidr' range."
+  description = "CIDR block of private IPs in the `cidr` range."
 }
 
 variable "private_inbound_acls" {
   default     = ["all"]
-  description = "Canned inbound ACLs for private subnets. If 'all' is a value in the list, all ports will be open. Other values include 'http', 'https', 'ssh', 'icmp', and 'eph'."
+  description = "Canned inbound ACLs for private subnets. If `all` is a value in the list, all ports will be open. Other values include `icmp`, `http`, `https`, `ssh`, `eph`, `nat`, `mysql`, `pgsql`, and `oracle`."
   type        = "list"
 }
 
 variable "private_outbound_acls" {
   default     = ["http", "https", "icmp"]
-  description = "Canned outbound ACLs for private subnets. If 'all' is a value in the list, all ports will be open. Other values include 'http', 'https', 'ssh', 'icmp', and 'eph'."
+  description = "Canned outbound ACLs for private subnets. If `all` is a value in the list, all ports will be open. Other values include `icmp`, `http`, `https`, `ssh`, `eph`, `nat`, `mysql`, `pgsql`, and `oracle`."
   type        = "list"
 }
 
 variable "private_subnets" {
   default     = 1
-  description = "Number of private subnets in the 'private_cidr' block."
+  description = "Number of private subnets in the `private_cidr` block."
 }
 
 variable "project_environment" {
@@ -46,22 +51,22 @@ variable "project_name" {
 
 variable "public_cidr" {
   default     = "10.87.1.0/24"
-  description = "CIDR block of public IPs in the 'cidr' range."
+  description = "CIDR block of public IPs in the `cidr` range."
 }
 
 variable "public_inbound_acls" {
   default     = ["http", "https", "ssh", "icmp", "nat"]
-  description = "Canned inbound ACLs for public subnets. If 'all' is a value in the list, all ports will be open. Other values include 'http', 'https', 'ssh', 'icmp', and 'eph'."
+  description = "Canned inbound ACLs for public subnets. If `all` is a value in the list, all ports will be open. Other values include `icmp`, `http`, `https`, `ssh`, `eph`, `nat`, `mysql`, `pgsql`, and `oracle`."
   type        = "list"
 }
 
 variable "public_outbound_acls" {
   default     = ["http", "https", "ssh", "icmp", "eph"]
-  description = "Canned outbound ACLs for public subnets. If 'all' is a value in the list, all ports will be open. Other values include 'http', 'https', 'ssh', 'icmp', and 'eph'."
+  description = "Canned outbound ACLs for public subnets. If `all` is a value in the list, all ports will be open. Other values include `icmp`, `http`, `https`, `ssh`, `eph`, `nat`, `mysql`, `pgsql`, and `oracle`."
   type        = "list"
 }
 
 variable "public_subnets" {
   default     = 1
-  description = "Number of public subnets in the 'public_cidr' block."
+  description = "Number of public subnets in the `public_cidr` block."
 }
